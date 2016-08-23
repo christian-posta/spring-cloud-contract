@@ -41,8 +41,11 @@ import spock.lang.Specification
  */
 @ContextConfiguration(classes = Config, loader = SpringBootContextLoader)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-		properties = ["stubrunner.camel.enabled=false", "eureka.client.enabled=false",
-				"stubrunner.cloud.stubbed.discovery.enabled=false"])
+		properties = ["stubrunner.camel.enabled=false",
+				"eureka.client.enabled=false",
+				"stubrunner.cloud.stubbed.discovery.enabled=false",
+				"stubrunner.cloud.ribbon.enabled=false",
+				"debug=true"])
 @AutoConfigureStubRunner
 @DirtiesContext
 class StubRunnerSpringCloudZookeeperAutoConfigurationSpec extends Specification {
